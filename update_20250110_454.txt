@@ -1,0 +1,16 @@
+
+class DataProcessor
+  def self.generate_random_data
+    Array.new(10) { rand(1..100) }
+  end
+
+  def self.process_data(data)
+    data.select { |x| x > 50 }.map { |x| x * 2 }
+  end
+end
+
+data = DataProcessor.generate_random_data
+processed = DataProcessor.process_data(data)
+
+puts "Original data: #{data}"
+puts "Processed data: #{processed}"
